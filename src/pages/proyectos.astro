@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import WaveDivider from '../components/WaveDivider.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+
+const proyectos = [
+  { color: 'coral', icon: 'heart', title: 'Despensas Ayudamigos', description: 'Recolección y entrega mensual de despensas a familias en situación vulnerable dentro de la comunidad.' },
+  { color: 'sun', icon: 'gift', title: 'Rifamigos', description: 'Rifas solidarias con premios donados por la comunidad para recaudar fondos destinados a nuestros proyectos.' },
+  { color: 'leaf', icon: 'hands', title: 'Jornadas de limpieza', description: 'Actividades comunitarias para el cuidado de espacios públicos, parques y áreas verdes.' },
+  { color: 'sky', icon: 'book', title: 'Tardes de lectura', description: 'Espacios recreativos y educativos para niños de la comunidad, con cuentacuentos y talleres.' },
+  { color: 'sun', icon: 'heart', title: 'Ropa que abriga', description: 'Campañas de recolección de ropa en buen estado para donarla en temporada de frío.' },
+  { color: 'coral', icon: 'gift', title: 'Navidad Ayudamigos', description: 'Entrega de juguetes y regalos a niños de la comunidad durante la temporada navideña.' },
+];
+---
+<Layout title="Proyectos" description="Conoce los proyectos sociales activos de Ayudamigos: despensas, rifas, jornadas comunitarias y más.">
+  <PageHero
+    color="coral"
+    eyebrow="Nuestros proyectos"
+    title="Proyectos que están cambiando nuestra comunidad"
+    description="Cada proyecto nace de una necesidad real de la comunidad y se construye con el apoyo de nuestros ayudamigos."
+  />
+
+  <WaveDivider from="#FF6F59" to="#FFFBF0" />
+
+  <section class="mx-auto max-w-7xl px-5 md:px-8 py-16 md:py-20">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {proyectos.map((p) => (
+        <ProjectCard color={p.color as any} icon={p.icon as any} title={p.title} description={p.description} />
+      ))}
+    </div>
+
+    <div class="mt-14 rounded-[2rem] bg-sky/10 p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <h2 class="font-display font-bold text-2xl text-ink">¿Tienes una idea de proyecto?</h2>
+        <p class="mt-2 text-ink/70 max-w-md">Nos encanta escuchar propuestas de la comunidad. Cuéntanos tu idea y construyámosla juntos.</p>
+      </div>
+      <a href="/ser-ayudamigo" class="btn-primary shrink-0">Proponer un proyecto</a>
+    </div>
+  </section>
+</Layout>

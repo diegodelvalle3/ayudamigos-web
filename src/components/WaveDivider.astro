@@ -1,0 +1,22 @@
+---
+interface Props {
+  from?: string;
+  to?: string;
+  flip?: boolean;
+  class?: string;
+}
+const { from = '#FFFBF0', to = '#2EA8E0', flip = false, class: klass = '' } = Astro.props;
+---
+<div class={`relative w-full leading-[0] ${klass}`} style={`background:${from}`}>
+  <svg
+    viewBox="0 0 1440 120"
+    class={`w-full h-16 md:h-24 ${flip ? 'rotate-180' : ''}`}
+    preserveAspectRatio="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M0,40 C240,110 480,0 720,40 C960,80 1200,20 1440,60 L1440,120 L0,120 Z"
+      fill={to}
+    />
+  </svg>
+</div>

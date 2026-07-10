@@ -1,0 +1,55 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import WaveDivider from '../components/WaveDivider.astro';
+
+const pasos = [
+  { title: 'Elige tus boletos', desc: 'Consulta la rifa activa y el número de boletos disponibles en nuestras redes sociales.' },
+  { title: 'Aparta tu número', desc: 'Escríbenos para apartar tu boleto y recibir los datos para tu aportación.' },
+  { title: 'Espera el sorteo', desc: 'El sorteo se transmite en vivo por nuestras redes para que todos puedan verlo.' },
+  { title: 'Apoya un proyecto', desc: 'Lo recaudado se destina por completo a los proyectos sociales activos de Ayudamigos.' },
+];
+---
+<Layout title="Rifamigos" description="Rifamigos: las rifas solidarias de Ayudamigos que recaudan fondos para nuestros proyectos sociales.">
+  <PageHero
+    color="sun"
+    eyebrow="Rifamigos"
+    title="Participa, gana y ayuda a la vez"
+    description="Rifamigos son nuestras rifas solidarias: cada boleto vendido se convierte en apoyo directo para la comunidad."
+  />
+
+  <WaveDivider from="#FFC845" to="#FFFBF0" />
+
+  <section class="mx-auto max-w-7xl px-5 md:px-8 py-16 md:py-20">
+    <div class="grid md:grid-cols-2 gap-12 items-start">
+      <div>
+        <span class="section-eyebrow">¿Cómo funciona?</span>
+        <h2 class="mt-4 font-display font-extrabold text-3xl text-ink">Cuatro pasos para participar</h2>
+        <div class="mt-8 space-y-6">
+          {pasos.map((p, i) => (
+            <div class="flex gap-4">
+              <span class="h-10 w-10 shrink-0 rounded-full bg-sun text-ink font-display font-extrabold flex items-center justify-center">
+                {i + 1}
+              </span>
+              <div>
+                <h3 class="font-display font-bold text-lg text-ink">{p.title}</h3>
+                <p class="mt-1 text-ink/70 text-[15px] leading-relaxed">{p.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="rounded-[2rem] bg-sun/15 p-8 md:p-10">
+        <h3 class="font-display font-bold text-xl text-ink">¿Por qué participar?</h3>
+        <ul class="mt-5 space-y-3 text-ink/75 text-[15px]">
+          <li class="flex items-start gap-2"><span class="text-leaf font-bold">✓</span> El 100% de lo recaudado se invierte en proyectos comunitarios.</li>
+          <li class="flex items-start gap-2"><span class="text-leaf font-bold">✓</span> Los sorteos son públicos y se transmiten en vivo.</li>
+          <li class="flex items-start gap-2"><span class="text-leaf font-bold">✓</span> Los premios son donados por negocios y personas de la comunidad.</li>
+          <li class="flex items-start gap-2"><span class="text-leaf font-bold">✓</span> Cada boleto ayuda, ¡ganes o no el premio!</li>
+        </ul>
+        <a href="mailto:ayudamigosmx@outlook.com" class="btn-primary mt-8">Quiero un boleto</a>
+      </div>
+    </div>
+  </section>
+</Layout>

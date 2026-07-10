@@ -1,0 +1,75 @@
+---
+import Logo from './Logo.astro';
+
+const links = [
+  { href: '/', label: 'Inicio' },
+  { href: '/proyectos', label: 'Proyectos' },
+  { href: '/donaciones', label: 'Donaciones' },
+  { href: '/rifamigos', label: 'Rifamigos' },
+  { href: '/inspiramigos', label: 'Inspiramigos' },
+  { href: '/ayudamigos', label: 'Ayudamigos' },
+];
+
+const current = Astro.url.pathname;
+---
+<header class="sticky top-0 z-50 bg-cream/90 backdrop-blur border-b-2 border-ink/5">
+  <nav class="mx-auto max-w-7xl px-5 md:px-8 h-20 flex items-center justify-between">
+    <Logo />
+
+    <ul class="hidden lg:flex items-center gap-1 font-display font-semibold text-[15px]">
+      {links.map((link) => {
+        const active = current === link.href || (link.href !== '/' && current.startsWith(link.href));
+        return (
+          <li>
+            <a
+              href={link.href}
+              class:list={[
+                'px-4 py-2 rounded-full transition-colors duration-150',
+                active ? 'bg-sky text-white' : 'text-ink hover:bg-sky/10 hover:text-sky-dark',
+              ]}
+            >
+              {link.label}
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+
+    <a href="/ser-ayudamigo" class="hidden lg:inline-flex btn-primary text-sm">
+      Quiero ser ayudamigo
+    </a>
+
+    <button
+      id="menu-toggle"
+      class="lg:hidden flex flex-col justify-center items-center gap-1.5 h-11 w-11 rounded-full hover:bg-ink/5"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <span class="block h-0.5 w-6 bg-ink rounded-full"></span>
+      <span class="block h-0.5 w-6 bg-ink rounded-full"></span>
+      <span class="block h-0.5 w-6 bg-ink rounded-full"></span>
+    </button>
+  </nav>
+
+  <div id="mobile-menu" class="hidden lg:hidden border-t-2 border-ink/5 bg-cream px-5 pb-6 pt-2">
+    <ul class="flex flex-col gap-1 font-display font-semibold">
+      {links.map((link) => (
+        <li>
+          <a href={link.href} class="block px-4 py-2.5 rounded-xl hover:bg-sky/10">{link.label}</a>
+        </li>
+      ))}
+    </ul>
+    <a href="/ser-ayudamigo" class="btn-primary w-full mt-3">Quiero ser ayudamigo</a>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  toggle?.addEventListener('click', () => {
+    const isHidden = menu?.classList.contains('hidden');
+    menu?.classList.toggle('hidden');
+    toggle.setAttribute('aria-expanded', String(isHidden));
+  });
+</script>

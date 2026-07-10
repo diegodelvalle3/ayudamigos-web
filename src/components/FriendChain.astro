@@ -1,0 +1,15 @@
+---
+interface Props {
+  class?: string;
+}
+const { class: klass = '' } = Astro.props;
+const colors = ['bg-coral', 'bg-sun', 'bg-sky', 'bg-leaf', 'bg-coral', 'bg-sun', 'bg-sky'];
+---
+<div class={`flex items-center justify-center gap-0 ${klass}`} aria-hidden="true">
+  {colors.map((c, i) => (
+    <>
+      {i > 0 && <span class="h-0.5 w-4 md:w-8 bg-ink/15 -mx-0"></span>}
+      <span class={`block h-3.5 w-3.5 md:h-4 md:w-4 rounded-full ${c} ring-4 ring-cream`}></span>
+    </>
+  ))}
+</div>

@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import WaveDivider from '../components/WaveDivider.astro';
+
+const historias = [
+  { name: 'Familia Ramírez', quote: 'Gracias a la despensa mensual pudimos salir adelante en un momento muy difícil para nosotros.', color: 'bg-coral/10', accent: 'text-coral-dark' },
+  { name: 'Doña Lupita', quote: 'Ver a los jóvenes de Ayudamigos tocar la puerta con una sonrisa nos devolvió la fe en la comunidad.', color: 'bg-sky/10', accent: 'text-sky-dark' },
+  { name: 'Grupo de niños del barrio', quote: 'Las tardes de lectura se volvieron nuestro momento favorito de la semana.', color: 'bg-leaf/10', accent: 'text-leaf-dark' },
+];
+---
+<Layout title="Inspiramigos" description="Historias y testimonios de la comunidad que ha vivido de cerca el trabajo de Ayudamigos.">
+  <PageHero
+    color="sky"
+    eyebrow="Inspiramigos"
+    title="Historias que nos mueven a seguir"
+    description="Detrás de cada proyecto hay personas reales. Estas son algunas de sus historias."
+  />
+
+  <WaveDivider from="#2EA8E0" to="#FFFBF0" />
+
+  <section class="mx-auto max-w-7xl px-5 md:px-8 py-16 md:py-20">
+    <div class="grid md:grid-cols-3 gap-6">
+      {historias.map((h) => (
+        <div class={`rounded-3xl ${h.color} p-7 flex flex-col gap-4`}>
+          <span class="text-4xl">❝</span>
+          <p class="text-ink/80 leading-relaxed italic">{h.quote}</p>
+          <p class={`font-display font-bold ${h.accent}`}>{h.name}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-16 text-center max-w-xl mx-auto">
+      <h2 class="font-display font-extrabold text-2xl md:text-3xl text-ink">¿Tienes una historia de Ayudamigos?</h2>
+      <p class="mt-3 text-ink/70 leading-relaxed">
+        Nos encantaría conocerla y compartirla con la comunidad para inspirar a más personas a sumarse.
+      </p>
+      <a href="mailto:ayudamigosmx@outlook.com" class="btn-primary mt-6">Comparte tu historia</a>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,169 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Blob from '../components/Blob.astro';
+import WaveDivider from '../components/WaveDivider.astro';
+import FriendChain from '../components/FriendChain.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+---
+<Layout title="Inicio">
+
+  <!-- HERO -->
+  <section class="relative overflow-hidden bg-sky">
+    <Blob color="#8FD6F5" class="absolute -top-16 -left-24 w-96 h-96 opacity-70" />
+    <Blob color="#FFC845" class="absolute -bottom-24 -right-16 w-[28rem] h-[28rem] opacity-90" />
+    <Blob color="#4CB963" class="absolute top-1/3 right-1/4 w-40 h-40 opacity-40 hidden md:block" />
+
+    <div class="relative mx-auto max-w-7xl px-5 md:px-8 pt-16 pb-28 md:pt-24 md:pb-36 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="inline-flex items-center gap-2 rounded-full bg-white/20 px-4 py-1.5 text-sm font-bold text-white backdrop-blur">
+          🌟 Proyecto social sin fines de lucro
+        </span>
+        <h1 class="mt-5 font-display font-extrabold text-4xl sm:text-5xl md:text-6xl text-white leading-[1.05]">
+          Construimos comunidad,
+          <span class="text-sun">un amigo</span> a la vez
+        </h1>
+        <p class="mt-6 text-lg text-white/90 max-w-lg leading-relaxed">
+          En Ayudamigos unimos a niños, jóvenes y adultos con proyectos de apoyo,
+          donación y actividades artísticas que hacen crecer a nuestra comunidad, día con día.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="/ser-ayudamigo" class="btn-primary">Quiero ser ayudamigo</a>
+          <a href="/proyectos" class="btn-outline">Ver proyectos</a>
+        </div>
+      </div>
+
+      <div class="relative mx-auto w-full max-w-md">
+        <div class="relative rounded-[2.5rem] bg-white/95 shadow-soft p-8 rotate-2">
+          <div class="flex items-center gap-3">
+            <span class="h-12 w-12 rounded-2xl bg-coral flex items-center justify-center text-2xl">🤝</span>
+            <div>
+              <p class="font-display font-bold text-ink">Comunidad activa</p>
+              <p class="text-sm text-ink/60">Creciendo juntos cada mes</p>
+            </div>
+          </div>
+          <div class="mt-6 grid grid-cols-2 gap-4">
+            <div class="rounded-2xl bg-sun/20 p-4">
+              <p class="font-display font-extrabold text-3xl text-sun-dark">+15</p>
+              <p class="text-xs font-semibold text-ink/70">proyectos sociales</p>
+            </div>
+            <div class="rounded-2xl bg-leaf/15 p-4">
+              <p class="font-display font-extrabold text-3xl text-leaf-dark">+300</p>
+              <p class="text-xs font-semibold text-ink/70">familias apoyadas</p>
+            </div>
+            <div class="rounded-2xl bg-coral/15 p-4">
+              <p class="font-display font-extrabold text-3xl text-coral-dark">+80</p>
+              <p class="text-xs font-semibold text-ink/70">ayudamigos activos</p>
+            </div>
+            <div class="rounded-2xl bg-sky/15 p-4">
+              <p class="font-display font-extrabold text-3xl text-sky-dark">100%</p>
+              <p class="text-xs font-semibold text-ink/70">voluntario</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <WaveDivider from="#2EA8E0" to="#FFFBF0" />
+
+  <!-- OBJETIVO -->
+  <section class="mx-auto max-w-7xl px-5 md:px-8 py-16 md:py-20 grid md:grid-cols-2 gap-12 items-center">
+    <div class="relative order-2 md:order-1">
+      <Blob color="#FFE18C" class="absolute -top-10 -left-10 w-56 h-56 -z-10" />
+      <div class="rounded-[2rem] bg-white shadow-soft p-8 md:p-10">
+        <p class="font-display text-xl md:text-2xl leading-snug text-ink">
+          "La integración de todos es lo que construye una
+          <span class="text-coral">mejor comunidad</span>."
+        </p>
+        <FriendChain class="mt-8" />
+      </div>
+    </div>
+
+    <div class="order-1 md:order-2">
+      <span class="section-eyebrow">Nuestro objetivo</span>
+      <h2 class="mt-4 font-display font-extrabold text-3xl md:text-4xl text-ink">
+        Una mejor comunidad, hecha entre todos
+      </h2>
+      <p class="mt-5 text-ink/70 leading-relaxed">
+        Somos una organización sin fines de lucro que trabaja para mejorar, día a día,
+        la vida de nuestra comunidad. Impulsamos proyectos sociales, apoyos y donaciones
+        para quienes más lo necesitan, además de eventos artísticos que acercan a niños,
+        jóvenes y adultos.
+      </p>
+      <p class="mt-4 text-ink/70 leading-relaxed">
+        Creemos que el bienestar se construye en conjunto: entre más personas se sumen,
+        más lejos podemos llegar como comunidad.
+      </p>
+      <a href="/ayudamigos" class="mt-6 inline-flex items-center gap-2 font-display font-bold text-sky-dark hover:gap-3 transition-all">
+        Conoce a los ayudamigos <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- PROYECTOS -->
+  <section class="bg-white/60 py-16 md:py-20">
+    <div class="mx-auto max-w-7xl px-5 md:px-8">
+      <div class="max-w-2xl mx-auto text-center">
+        <span class="section-eyebrow">Nuestros proyectos</span>
+        <h2 class="mt-4 font-display font-extrabold text-3xl md:text-4xl text-ink">
+          Nuevas formas de ayudar
+        </h2>
+        <p class="mt-4 text-ink/70 leading-relaxed">
+          Ayudamigos impulsa distintos proyectos solidarios, siempre buscando nuevas
+          formas de apoyo e interacción con la comunidad.
+        </p>
+      </div>
+
+      <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <ProjectCard
+          color="coral"
+          icon="heart"
+          title="Apoyos directos"
+          description="Donaciones de ropa, alimento y artículos de primera necesidad para familias de la comunidad."
+        />
+        <ProjectCard
+          color="sun"
+          icon="gift"
+          title="Rifamigos"
+          description="Rifas solidarias que recaudan fondos para financiar nuestros proyectos sociales."
+        />
+        <ProjectCard
+          color="leaf"
+          icon="hands"
+          title="Eventos comunitarios"
+          description="Actividades artísticas y recreativas que integran a niños, jóvenes y adultos."
+        />
+        <ProjectCard
+          color="sky"
+          icon="book"
+          title="Inspiramigos"
+          description="Historias y testimonios que motivan a más personas a sumarse al cambio."
+        />
+      </div>
+
+      <div class="mt-10 text-center">
+        <a href="/proyectos" class="btn-secondary">Ver todos los proyectos</a>
+      </div>
+    </div>
+  </section>
+
+  <WaveDivider from="#FFFBF0" to="#FFC845" />
+
+  <!-- CTA -->
+  <section class="relative overflow-hidden bg-sun">
+    <Blob color="#FFE18C" class="absolute -top-10 -right-10 w-72 h-72 opacity-70" />
+    <div class="relative mx-auto max-w-4xl px-5 md:px-8 py-16 md:py-20 text-center">
+      <h2 class="font-display font-extrabold text-3xl md:text-4xl text-ink">
+        ¡Súmate al cambio!
+      </h2>
+      <p class="mt-4 text-ink/80 max-w-xl mx-auto leading-relaxed">
+        Ser ayudamigo es fácil: aporta tu tiempo, tus talentos o tu apoyo y forma
+        parte de la red que está transformando nuestra comunidad.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a href="/ser-ayudamigo" class="btn-primary">Quiero ser ayudamigo</a>
+        <a href="/donaciones" class="btn-secondary">Hacer una donación</a>
+      </div>
+    </div>
+  </section>
+</Layout>

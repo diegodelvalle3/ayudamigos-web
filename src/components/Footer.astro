@@ -1,0 +1,51 @@
+---
+import Logo from './Logo.astro';
+---
+<footer class="bg-ink text-cream">
+  <div class="mx-auto max-w-7xl px-5 md:px-8 py-14 grid grid-cols-1 md:grid-cols-4 gap-10">
+    <div class="md:col-span-2">
+      <Logo light />
+      <p class="mt-4 max-w-sm text-cream/70 text-[15px] leading-relaxed">
+        Somos una organización social sin fines de lucro que trabaja día a día por una
+        mejor comunidad, con proyectos que unen a niños, jóvenes y adultos.
+      </p>
+      <div class="flex gap-3 mt-6">
+        <a href="https://www.facebook.com/ayudamigosjc" target="_blank" rel="noopener noreferrer"
+           class="h-11 w-11 rounded-full bg-white/10 flex items-center justify-center hover:bg-sky transition-colors"
+           aria-label="Facebook de Ayudamigos">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.2h-3.1V7.7c0-.9.3-1.6 1.6-1.6h1.7V3.2C16.5 3.1 15.4 3 14.2 3c-2.6 0-4.4 1.6-4.4 4.5v2.3H7v3.2h2.8v8h3.7z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/ayudamigosmx/" target="_blank" rel="noopener noreferrer"
+           class="h-11 w-11 rounded-full bg-white/10 flex items-center justify-center hover:bg-coral transition-colors"
+           aria-label="Instagram de Ayudamigos">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c2.7 0 3 0 4 .1 1 .05 1.7.2 2.3.5.6.2 1.1.6 1.6 1.1.5.5.8 1 1.1 1.6.2.6.4 1.3.5 2.3 0 1 .1 1.3.1 4s0 3-.1 4c-.05 1-.2 1.7-.5 2.3-.2.6-.6 1.1-1.1 1.6-.5.5-1 .8-1.6 1.1-.6.2-1.3.4-2.3.5-1 0-1.3.1-4 .1s-3 0-4-.1c-1-.05-1.7-.2-2.3-.5-.6-.2-1.1-.6-1.6-1.1-.5-.5-.8-1-1.1-1.6-.2-.6-.4-1.3-.5-2.3 0-1-.1-1.3-.1-4s0-3 .1-4c.05-1 .2-1.7.5-2.3.2-.6.6-1.1 1.1-1.6.5-.5 1-.8 1.6-1.1.6-.2 1.3-.4 2.3-.5 1 0 1.3-.1 4-.1zM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.2-8.4a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="font-display font-bold text-sm uppercase tracking-wide text-sun">Conoce más</h3>
+      <ul class="mt-4 space-y-2.5 text-cream/80 text-[15px]">
+        <li><a href="/ayudamigos" class="hover:text-white transition-colors">Miembros actuales</a></li>
+        <li><a href="/proyectos" class="hover:text-white transition-colors">Proyectos</a></li>
+        <li><a href="/inspiramigos" class="hover:text-white transition-colors">Inspiramigos</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="font-display font-bold text-sm uppercase tracking-wide text-sun">Únete al cambio</h3>
+      <ul class="mt-4 space-y-2.5 text-cream/80 text-[15px]">
+        <li><a href="/ser-ayudamigo" class="hover:text-white transition-colors">Ser ayudamigo</a></li>
+        <li><a href="/donaciones" class="hover:text-white transition-colors">Donar</a></li>
+        <li><a href="/rifamigos" class="hover:text-white transition-colors">Rifamigos</a></li>
+        <li><a href="mailto:ayudamigosmx@outlook.com" class="hover:text-white transition-colors">ayudamigosmx@outlook.com</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10">
+    <p class="mx-auto max-w-7xl px-5 md:px-8 py-5 text-center text-sm text-cream/60">
+      © {new Date().getFullYear()} Ayudamigos · Juventud al Cambio. Hecho con cariño por la comunidad.
+    </p>
+  </div>
+</footer>

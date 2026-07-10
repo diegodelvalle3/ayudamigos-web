@@ -1,0 +1,38 @@
+---
+interface Props {
+  eyebrow: string;
+  title: string;
+  description: string;
+  color?: 'sky' | 'coral' | 'sun' | 'leaf';
+}
+const { eyebrow, title, description, color = 'sky' } = Astro.props;
+
+const bg: Record<string, string> = {
+  sky: 'bg-sky',
+  coral: 'bg-coral',
+  sun: 'bg-sun',
+  leaf: 'bg-leaf',
+};
+const blob: Record<string, string> = {
+  sky: '#8FD6F5',
+  coral: '#FF9C8C',
+  sun: '#FFE18C',
+  leaf: '#8FDA9E',
+};
+---
+<section class={`relative overflow-hidden ${bg[color]}`}>
+  <svg class="absolute -top-10 -right-10 w-64 h-64 opacity-50" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path fill={blob[color]} d="M45.3,-56.9C58.4,-49.6,68.4,-35.5,72.6,-19.9C76.8,-4.3,75.2,12.9,68.1,27.4C61,41.9,48.4,53.7,33.9,61.6C19.4,69.5,3,73.5,-13.8,72.1C-30.6,70.7,-47.8,63.9,-59.4,51.3C-71,38.7,-77,20.4,-76.8,2.3C-76.6,-15.8,-70.2,-33.6,-58.3,-41.9C-46.4,-50.2,-29,-49,-13.4,-53.2C2.2,-57.4,32.2,-64.2,45.3,-56.9Z" transform="translate(100 100)" />
+  </svg>
+  <div class="relative mx-auto max-w-7xl px-5 md:px-8 pt-14 pb-20 md:pt-20 md:pb-24">
+    <span class="inline-flex items-center gap-2 rounded-full bg-white/25 px-4 py-1.5 text-sm font-bold text-white backdrop-blur">
+      {eyebrow}
+    </span>
+    <h1 class="mt-4 font-display font-extrabold text-3xl sm:text-4xl md:text-5xl text-white max-w-2xl leading-tight">
+      {title}
+    </h1>
+    <p class="mt-4 text-white/90 max-w-xl leading-relaxed">
+      {description}
+    </p>
+  </div>
+</section>
