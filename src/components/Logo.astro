@@ -3,17 +3,26 @@ interface Props {
   light?: boolean;
   class?: string;
 }
-const { light = false, class: klass = '' } = Astro.props;
-const textColor = light ? 'text-white' : 'text-ink';
+const { light = false, class: klass = "" } = Astro.props;
+const textColor = light ? "text-white" : "text-ink";
+
+import logo from "../images/ayudamigosLogo.png";
 ---
+
 <a href="/" class={`flex items-center gap-2.5 group ${klass}`}>
-  <svg width="40" height="40" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0 transition-transform duration-300 group-hover:-rotate-6">
-    <circle cx="32" cy="32" r="30" fill="#FFC845"/>
-    <path d="M32 46c-1 0-2-.3-2.8-1C22 39 16 33.5 16 26.8 16 21.4 20.2 17 25.5 17c2.9 0 5.6 1.4 7.2 3.6a8.9 8.9 0 0 1 7.2-3.6C45.2 17 49.4 21.4 49.4 26.8 49.4 33.5 43.4 39 36 45c-.8.7-1.8 1-2.8 1z" fill="#FF6F59" transform="translate(-2 0) scale(0.95) translate(2 1)"/>
-    <circle cx="20" cy="22" r="4" fill="#2EA8E0"/>
-    <circle cx="46" cy="42" r="3.2" fill="#4CB963"/>
-  </svg>
-  <span class={`font-display font-extrabold text-xl leading-tight ${textColor}`}>
-    Ayudamigos<span class="block text-xs font-body font-semibold tracking-wide -mt-0.5 opacity-80">Juventud al Cambio</span>
+  <img src={logo.src} alt="Ayudamigos Logo" class="header_logo" />
+  <span
+    class={`font-display font-extrabold text-xl leading-tight ${textColor}`}
+  >
+    Ayudamigos<span
+      class="block text-xs font-body font-semibold tracking-wide -mt-0.5 opacity-80"
+      >Juventud al Cambio</span
+    >
   </span>
 </a>
+
+<style>
+  .header_logo {
+    width: 50px;
+  }
+</style>
