@@ -1,17 +1,41 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import PageHero from '../components/PageHero.astro';
-import WaveDivider from '../components/WaveDivider.astro';
-import FriendChain from '../components/FriendChain.astro';
+import Layout from "../layouts/Layout.astro";
+import PageHero from "../components/PageHero.astro";
+import WaveDivider from "../components/WaveDivider.astro";
+import FriendChain from "../components/FriendChain.astro";
 
 const formas = [
-  { title: 'Despensa', desc: 'Alimentos no perecederos, agua embotellada y artículos de higiene personal.', icon: '🥫', color: 'bg-coral' },
-  { title: 'Ropa y calzado', desc: 'Prendas y calzado en buen estado, para todas las edades.', icon: '👕', color: 'bg-sky' },
-  { title: 'Útiles escolares', desc: 'Cuadernos, mochilas y material para apoyar la educación de los niños.', icon: '✏️', color: 'bg-sun' },
-  { title: 'Donativo económico', desc: 'Aportaciones monetarias que se destinan directamente a nuestros proyectos activos.', icon: '💛', color: 'bg-leaf' },
+  {
+    title: "Despensa",
+    desc: "Alimentos no perecederos, agua embotellada y artículos de higiene personal.",
+    icon: "🥫",
+    color: "bg-coral",
+  },
+  {
+    title: "Ropa y calzado",
+    desc: "Prendas y calzado en buen estado, para todas las edades.",
+    icon: "👕",
+    color: "bg-sky",
+  },
+  {
+    title: "Útiles escolares",
+    desc: "Cuadernos, mochilas y material para apoyar la educación de los niños.",
+    icon: "✏️",
+    color: "bg-sun",
+  },
+  {
+    title: "Donativo económico",
+    desc: "Aportaciones monetarias que se destinan directamente a nuestros proyectos activos.",
+    icon: "💛",
+    color: "bg-leaf",
+  },
 ];
 ---
-<Layout title="Donaciones" description="Conoce las formas en que puedes donar a Ayudamigos y apoyar a las familias de nuestra comunidad.">
+
+<Layout
+  title="Donaciones"
+  description="Conoce las formas en que puedes donar a Ayudamigos y apoyar a las familias de nuestra comunidad."
+>
   <PageHero
     color="leaf"
     eyebrow="Donaciones"
@@ -19,36 +43,65 @@ const formas = [
     description="Cada donación, grande o pequeña, se convierte en apoyo real para las familias de nuestra comunidad."
   />
 
-  <WaveDivider from="#4CB963" to="#FFFBF0" />
+  <WaveDivider from="#27B5A8" to="#FFFBF0" />
 
   <section class="mx-auto max-w-7xl px-5 md:px-8 py-16 md:py-20">
     <div class="max-w-2xl">
       <span class="section-eyebrow">Formas de donar</span>
-      <h2 class="mt-4 font-display font-extrabold text-3xl md:text-4xl text-ink">¿Qué puedes donar?</h2>
+      <h2
+        class="mt-4 font-display font-extrabold text-3xl md:text-4xl text-ink"
+      >
+        ¿Qué puedes donar?
+      </h2>
     </div>
 
     <div class="mt-10 grid sm:grid-cols-2 gap-6">
-      {formas.map((f) => (
-        <div class="flex gap-4 rounded-2xl bg-white shadow-soft p-6">
-          <span class={`h-12 w-12 shrink-0 rounded-xl ${f.color} flex items-center justify-center text-2xl`}>{f.icon}</span>
-          <div>
-            <h3 class="font-display font-bold text-lg text-ink">{f.title}</h3>
-            <p class="mt-1 text-ink/70 text-[15px] leading-relaxed">{f.desc}</p>
+      {
+        formas.map((f) => (
+          <div class="flex gap-4 rounded-2xl bg-white shadow-soft p-6">
+            <span
+              class={`h-12 w-12 shrink-0 rounded-xl ${f.color} flex items-center justify-center text-2xl`}
+            >
+              {f.icon}
+            </span>
+            <div>
+              <h3 class="font-display font-bold text-lg text-ink">{f.title}</h3>
+              <p class="mt-1 text-ink/70 text-[15px] leading-relaxed">
+                {f.desc}
+              </p>
+            </div>
           </div>
-        </div>
-      ))}
+        ))
+      }
     </div>
 
     <div class="mt-16 rounded-[2rem] bg-ink text-cream p-8 md:p-12">
       <div class="grid md:grid-cols-3 gap-8 items-start">
         <div class="md:col-span-2">
-          <h2 class="font-display font-bold text-2xl md:text-3xl">¿Cómo hacer tu donación?</h2>
+          <h2 class="font-display font-bold text-2xl md:text-3xl">
+            ¿Cómo hacer tu donación?
+          </h2>
           <ol class="mt-6 space-y-4 text-cream/80 text-[15px] leading-relaxed">
-            <li><span class="font-display font-bold text-sun">1.</span> Escríbenos a <a href="mailto:ayudamigosmx@outlook.com" class="underline decoration-sun underline-offset-4">ayudamigosmx@outlook.com</a> o por nuestras redes sociales.</li>
-            <li><span class="font-display font-bold text-sun">2.</span> Coordinamos contigo el lugar y la fecha de entrega o recolección.</li>
-            <li><span class="font-display font-bold text-sun">3.</span> Tu donación se suma a nuestra próxima entrega comunitaria.</li>
+            <li>
+              <span class="font-display font-bold text-sun">1.</span> Escríbenos a
+              <a
+                href="mailto:ayudamigosmx@outlook.com"
+                class="underline decoration-sun underline-offset-4"
+                >ayudamigosmx@outlook.com</a
+              > o por nuestras redes sociales.
+            </li>
+            <li>
+              <span class="font-display font-bold text-sun">2.</span> Coordinamos
+              contigo el lugar y la fecha de entrega o recolección.
+            </li>
+            <li>
+              <span class="font-display font-bold text-sun">3.</span> Tu donación
+              se suma a nuestra próxima entrega comunitaria.
+            </li>
           </ol>
-          <a href="mailto:ayudamigosmx@outlook.com" class="btn-primary mt-8">Escribir a Ayudamigos</a>
+          <a href="mailto:ayudamigosmx@outlook.com" class="btn-primary mt-8"
+            >Escribir a Ayudamigos</a
+          >
         </div>
         <FriendChain class="md:mt-4" />
       </div>
