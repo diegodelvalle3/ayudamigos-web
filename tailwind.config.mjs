@@ -17,14 +17,14 @@ export default {
           dark: '#F0A800',
         },
         coral: {
-          DEFAULT: '#FF6F59',
-          light: '#FF9C8C',
-          dark: '#E4523C',
+          DEFAULT: '#EC4899',
+          light: '#F9A8D4',
+          dark: '#BE185D',
         },
         leaf: {
-          DEFAULT: '#4CB963',
-          light: '#8FDA9E',
-          dark: '#379149',
+          DEFAULT: '#27B5A8',
+          light: '#8FDCD3',
+          dark: '#1B7F74',
         },
       },
       fontFamily: {
