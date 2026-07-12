@@ -1,15 +1,29 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import PageHero from '../components/PageHero.astro';
-import WaveDivider from '../components/WaveDivider.astro';
+import Layout from "../layouts/Layout.astro";
+import PageHero from "../components/PageHero.astro";
+import WaveDivider from "../components/WaveDivider.astro";
+import { fade } from "astro:transitions";
 
 const beneficios = [
-  { icon: '🌱', text: 'Formas parte de una comunidad que crece cada día.' },
-  { icon: '🎨', text: 'Participas en proyectos y eventos artísticos y sociales.' },
-  { icon: '🤗', text: 'Conoces personas con tus mismas ganas de ayudar.' },
+  {
+    icon: "fa-solid fa-users text-xl",
+    text: "Formas parte de una comunidad que crece cada día.",
+  },
+  {
+    icon: "fa-solid fa-palette text-xl",
+    text: "Participas en proyectos y eventos artísticos y sociales.",
+  },
+  {
+    icon: "fa-solid fa-hands-holding-child text-xl",
+    text: "Conoces personas con tus mismas ganas de ayudar.",
+  },
 ];
 ---
-<Layout title="Quiero ser ayudamigo" description="Súmate como voluntario a Ayudamigos y forma parte de nuestros proyectos sociales.">
+
+<Layout
+  title="Quiero ser ayudamigo"
+  description="Súmate como voluntario a Ayudamigos y forma parte de nuestros proyectos sociales."
+>
   <PageHero
     color="leaf"
     eyebrow="Únete al cambio"
@@ -17,53 +31,118 @@ const beneficios = [
     description="Cuéntanos un poco de ti y nos pondremos en contacto contigo para sumarte a nuestro equipo de voluntarios."
   />
 
-  <WaveDivider from="#4CB963" to="#FFFBF0" />
+  <WaveDivider from="#27B5A8" to="#FFFBF0" />
 
-  <section class="mx-auto max-w-7xl px-5 md:px-8 py-16 md:py-20 grid lg:grid-cols-5 gap-10">
+  <section
+    class="mx-auto max-w-7xl px-5 md:px-8 py-16 md:py-20 grid lg:grid-cols-5 gap-10"
+  >
     <div class="lg:col-span-2">
       <h2 class="font-display font-bold text-2xl text-ink">¿Por qué unirte?</h2>
       <ul class="mt-6 space-y-5">
-        {beneficios.map((b) => (
-          <li class="flex items-start gap-3">
-            <span class="text-2xl">{b.icon}</span>
-            <p class="text-ink/70 leading-relaxed pt-1">{b.text}</p>
-          </li>
-        ))}
+        {
+          beneficios.map((b) => (
+            <li class="flex items-center gap-3 text-cyan-700">
+              <i class={b.icon} />
+              <p class="text-ink/70 leading-relaxed pt-1">{b.text}</p>
+            </li>
+          ))
+        }
       </ul>
       <div class="mt-8 rounded-2xl bg-sun/15 p-6">
         <p class="text-sm text-ink/70 leading-relaxed">
           También puedes escribirnos directamente a
-          <a href="mailto:ayudamigosmx@outlook.com" class="font-bold text-ink underline decoration-sun underline-offset-4">ayudamigosmx@outlook.com</a>.
+          <a
+            href="mailto:ayudamigosmx@outlook.com"
+            class="font-bold text-ink underline decoration-sun underline-offset-4"
+            >ayudamigosmx@outlook.com</a
+          >.
         </p>
       </div>
     </div>
 
-    <form class="lg:col-span-3 rounded-[2rem] bg-white shadow-soft p-8 md:p-10 grid gap-5" onsubmit="event.preventDefault(); this.querySelector('#form-success').classList.remove('hidden');">
+    <form
+      class="lg:col-span-3 rounded-[2rem] bg-white shadow-soft p-8 md:p-10 grid gap-5"
+      onsubmit="event.preventDefault(); this.querySelector('#form-success').classList.remove('hidden');"
+    >
       <div class="grid sm:grid-cols-2 gap-5">
         <div>
-          <label for="nombre" class="block font-display font-semibold text-sm text-ink mb-1.5">Nombre completo</label>
-          <input id="nombre" name="nombre" type="text" required class="w-full rounded-xl border-2 border-ink/10 px-4 py-2.5 focus:border-sky outline-none transition-colors" placeholder="Tu nombre" />
+          <label
+            for="nombre"
+            class="block font-display font-semibold text-sm text-ink mb-1.5"
+            >Nombre completo</label
+          >
+          <input
+            id="nombre"
+            name="nombre"
+            type="text"
+            required
+            class="w-full rounded-xl border-2 border-ink/10 px-4 py-2.5 focus:border-sky outline-none transition-colors"
+            placeholder="Tu nombre"
+          />
         </div>
         <div>
-          <label for="edad" class="block font-display font-semibold text-sm text-ink mb-1.5">Edad</label>
-          <input id="edad" name="edad" type="number" min="10" max="99" required class="w-full rounded-xl border-2 border-ink/10 px-4 py-2.5 focus:border-sky outline-none transition-colors" placeholder="18" />
+          <label
+            for="edad"
+            class="block font-display font-semibold text-sm text-ink mb-1.5"
+            >Edad</label
+          >
+          <input
+            id="edad"
+            name="edad"
+            type="number"
+            min="10"
+            max="99"
+            required
+            class="w-full rounded-xl border-2 border-ink/10 px-4 py-2.5 focus:border-sky outline-none transition-colors"
+            placeholder="18"
+          />
         </div>
       </div>
 
       <div class="grid sm:grid-cols-2 gap-5">
         <div>
-          <label for="correo" class="block font-display font-semibold text-sm text-ink mb-1.5">Correo electrónico</label>
-          <input id="correo" name="correo" type="email" required class="w-full rounded-xl border-2 border-ink/10 px-4 py-2.5 focus:border-sky outline-none transition-colors" placeholder="tu@correo.com" />
+          <label
+            for="correo"
+            class="block font-display font-semibold text-sm text-ink mb-1.5"
+            >Correo electrónico</label
+          >
+          <input
+            id="correo"
+            name="correo"
+            type="email"
+            required
+            class="w-full rounded-xl border-2 border-ink/10 px-4 py-2.5 focus:border-sky outline-none transition-colors"
+            placeholder="tu@correo.com"
+          />
         </div>
         <div>
-          <label for="telefono" class="block font-display font-semibold text-sm text-ink mb-1.5">Teléfono</label>
-          <input id="telefono" name="telefono" type="tel" required class="w-full rounded-xl border-2 border-ink/10 px-4 py-2.5 focus:border-sky outline-none transition-colors" placeholder="777 123 4567" />
+          <label
+            for="telefono"
+            class="block font-display font-semibold text-sm text-ink mb-1.5"
+            >Teléfono</label
+          >
+          <input
+            id="telefono"
+            name="telefono"
+            type="tel"
+            required
+            class="w-full rounded-xl border-2 border-ink/10 px-4 py-2.5 focus:border-sky outline-none transition-colors"
+            placeholder="777 123 4567"
+          />
         </div>
       </div>
 
       <div>
-        <label for="interes" class="block font-display font-semibold text-sm text-ink mb-1.5">¿En qué te gustaría ayudar?</label>
-        <select id="interes" name="interes" class="w-full rounded-xl border-2 border-ink/10 px-4 py-2.5 focus:border-sky outline-none transition-colors">
+        <label
+          for="interes"
+          class="block font-display font-semibold text-sm text-ink mb-1.5"
+          >¿En qué te gustaría ayudar?</label
+        >
+        <select
+          id="interes"
+          name="interes"
+          class="w-full rounded-xl border-2 border-ink/10 px-4 py-2.5 focus:border-sky outline-none transition-colors"
+        >
           <option>Apoyos y donaciones</option>
           <option>Rifamigos</option>
           <option>Eventos comunitarios</option>
@@ -73,14 +152,29 @@ const beneficios = [
       </div>
 
       <div>
-        <label for="mensaje" class="block font-display font-semibold text-sm text-ink mb-1.5">Cuéntanos un poco sobre ti</label>
-        <textarea id="mensaje" name="mensaje" rows="4" class="w-full rounded-xl border-2 border-ink/10 px-4 py-2.5 focus:border-sky outline-none transition-colors" placeholder="Escribe aquí..."></textarea>
+        <label
+          for="mensaje"
+          class="block font-display font-semibold text-sm text-ink mb-1.5"
+          >Cuéntanos un poco sobre ti</label
+        >
+        <textarea
+          id="mensaje"
+          name="mensaje"
+          rows="4"
+          class="w-full rounded-xl border-2 border-ink/10 px-4 py-2.5 focus:border-sky outline-none transition-colors"
+          placeholder="Escribe aquí..."></textarea>
       </div>
 
-      <button type="submit" class="btn-primary justify-self-start">Enviar solicitud</button>
+      <button type="submit" class="btn-primary justify-self-start"
+        >Enviar solicitud</button
+      >
 
-      <p id="form-success" class="hidden rounded-xl bg-leaf/15 text-leaf-dark font-semibold px-4 py-3 text-sm">
-        ¡Gracias por tu interés! Un ayudamigo se pondrá en contacto contigo muy pronto.
+      <p
+        id="form-success"
+        class="hidden rounded-xl bg-leaf/15 text-leaf-dark font-semibold px-4 py-3 text-sm"
+      >
+        ¡Gracias por tu interés! Un ayudamigo se pondrá en contacto contigo muy
+        pronto.
       </p>
     </form>
   </section>

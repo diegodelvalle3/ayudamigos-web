@@ -8,25 +8,25 @@ const formas = [
   {
     title: "Despensa",
     desc: "Alimentos no perecederos, agua embotellada y artículos de higiene personal.",
-    icon: "🥫",
+    icon: "fa-solid fa-carrot text-white",
     color: "bg-coral",
   },
   {
     title: "Ropa y calzado",
     desc: "Prendas y calzado en buen estado, para todas las edades.",
-    icon: "👕",
+    icon: "fa-solid fa-shirt text-white",
     color: "bg-sky",
   },
   {
     title: "Útiles escolares",
     desc: "Cuadernos, mochilas y material para apoyar la educación de los niños.",
-    icon: "✏️",
+    icon: "fa-solid fa-pen-ruler text-white",
     color: "bg-sun",
   },
   {
     title: "Donativo económico",
     desc: "Aportaciones monetarias que se destinan directamente a nuestros proyectos activos.",
-    icon: "💛",
+    icon: "fa-regular fa-heart text-white",
     color: "bg-leaf",
   },
 ];
@@ -62,7 +62,7 @@ const formas = [
             <span
               class={`h-12 w-12 shrink-0 rounded-xl ${f.color} flex items-center justify-center text-2xl`}
             >
-              {f.icon}
+              <i class={f.icon} />
             </span>
             <div>
               <h3 class="font-display font-bold text-lg text-ink">{f.title}</h3>
