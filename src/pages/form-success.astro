@@ -13,12 +13,13 @@ import Layout from "../layouts/Layout.astro";
             <span class="font-display text-2xl"
                 >¡Solicitud enviada con éxito!</span
             >
+
             <p class="text-xl mt-2">
                 Uno de nuestros agentes se pondrá en comunicación contigo lo
                 antes posible.
             </p>
 
-            <div>
+            <div class="mb-7">
                 <p class="text-lg mt-12">
                     No olvides seguirnos en nuestras redes sociales
                 </p>
@@ -27,7 +28,7 @@ import Layout from "../layouts/Layout.astro";
                         href="https://www.facebook.com/ayudamigosjc"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="h-11 w-11 rounded-full bg-red flex items-center justify-center hover:bg-sky transition-colors"
+                        class="h-11 w-11 rounded-full bg-ink flex text-white items-center justify-center hover:bg-sky transition-colors"
                         aria-label="Facebook de Ayudamigos"
                     >
                         <svg
@@ -44,7 +45,7 @@ import Layout from "../layouts/Layout.astro";
                         href="https://www.instagram.com/ayudamigosmx/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="h-11 w-11 rounded-full bg-red flex items-center justify-center hover:bg-coral transition-colors"
+                        class="h-11 w-11 rounded-full bg-ink flex text-white items-center justify-center hover:bg-coral transition-colors"
                         aria-label="Instagram de Ayudamigos"
                     >
                         <svg
@@ -59,6 +60,11 @@ import Layout from "../layouts/Layout.astro";
                     </a>
                 </div>
             </div>
+
+            <a href="/" class="hidden lg:inline-flex btn-primary text-sm">
+                <i class="fa-solid fa-arrow-left"></i>Regresar a la página
+                principal
+            </a>
         </div>
         <div>
             <svg
