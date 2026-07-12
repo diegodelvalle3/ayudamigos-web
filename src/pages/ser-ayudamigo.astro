@@ -67,9 +67,19 @@ const beneficios = [
       onsubmit="event.preventDefault(); this.querySelector('#form-success').classList.remove('hidden');"
       method="POST"
       action="/form-success"
+      netlify-honeypot="bot-field"
     >
       <div class="grid sm:grid-cols-2 gap-5">
         <div>
+          <input type="hidden" name="form-name" value="ser-ayudamigo" />
+
+          <p class="hidden">
+            <label>
+              No llenar:
+              <input name="bot-field" />
+            </label>
+          </p>
+
           <label
             for="nombre"
             class="block font-display font-semibold text-sm text-ink mb-1.5"
@@ -168,6 +178,8 @@ const beneficios = [
           class="w-full rounded-xl border-2 border-ink/10 px-4 py-2.5 focus:border-sky outline-none transition-colors"
           placeholder="Escribe aquí..."></textarea>
       </div>
+
+      <div data-netlify-recaptcha="true"></div>
 
       <button type="submit" class="btn-primary justify-self-start"
         >Enviar solicitud</button
