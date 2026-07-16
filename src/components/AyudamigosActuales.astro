@@ -1,0 +1,45 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { miembros } from "../data/miembros";
+
+// Mapeo de rol -> color de borde (clases completas para que Tailwind las detecte)
+const bordePorRol = {
+    Fundador: "border-cyan-500",
+    Digital: "border-coral",
+    Ayudamigo: "border-yellow-400",
+    Ayudamiga: "border-yellow-400",
+};
+const bordeDefault = "border-clay-200";
+---
+
+<section class="mx-auto max-w-7xl py-16 md:py-20">
+    <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-10 gap-x-10"
+    >
+        {
+            miembros.map((m) => (
+                <div
+                    class={`bg-[#FFFBF0] shadow-soft h-fit flex justify-center overflow-hidden relative border-2 border-black/10 rounded-lg`}
+                >
+                    <div class="w-full">
+                        <img
+                            src={m.img_url.src}
+                            alt={m.nombre}
+                            class="min-h-[320px] w-full h-full max-h-[320px] object-cover"
+                        />
+                    </div>
+                    <div
+                        class={`absolute left-1/2 -translate-x-1/2 bottom-2 w-[95%] rounded-xl bg-[#FDFCF8]/90 backdrop-blur-sm border-2 ${bordePorRol[m.rol] ?? bordeDefault} shadow-lg text-center flex flex-col p-1 justify-center items-center`}
+                    >
+                        <span class="font-bold">{m.nombre}</span>
+                        <span>{m.rol}</span>
+                        {/* <div class="flex mt-1">
+                <i class="fa-brands fa-instagram" />
+                <i class="fa-regular fa-face-smile" />
+              </div> */}
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+</section>
