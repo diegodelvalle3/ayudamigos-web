@@ -2,33 +2,23 @@
 import Layout from "../layouts/Layout.astro";
 import PageHero from "../components/PageHero.astro";
 import WaveDivider from "../components/WaveDivider.astro";
+import AyudamigosAct from "../components/AyudamigosActuales.astro";
 
 const equipo = [
   {
     name: "Coordinación general",
     role: "Dirección de proyectos",
-    color: "bg-coral",
-  },
-  {
-    name: "Relaciones comunitarias",
-    role: "Vínculo con familias y donantes",
     color: "bg-sky",
   },
   {
-    name: "Rifamigos",
-    role: "Organización de rifas solidarias",
+    name: "Contenido digital",
+    role: "Fotografía y Diseño Gráfico",
+    color: "bg-coral",
+  },
+  {
+    name: "Voluntariados",
+    role: "Ayudamigo(a) en acción",
     color: "bg-sun",
-  },
-  { name: "Redes sociales", role: "Comunicación y difusión", color: "bg-leaf" },
-  {
-    name: "Logística",
-    role: "Entregas y jornadas comunitarias",
-    color: "bg-coral",
-  },
-  {
-    name: "Nuevos ayudamigos",
-    role: "¡Este espacio podría ser tuyo!",
-    color: "bg-sky",
   },
 ];
 ---
@@ -60,6 +50,8 @@ const equipo = [
         ))
       }
     </div>
+
+    <AyudamigosAct />
 
     <div class="mt-16 rounded-[2rem] bg-sky text-white p-8 md:p-12 text-center">
       <h2 class="font-display font-extrabold text-2xl md:text-3xl">
